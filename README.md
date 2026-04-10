@@ -119,10 +119,5 @@ Affiche les deux images avec la distance euclidienne et le verdict (vert = même
 
 ---
 
-## Lancement rapide (non recommandé)
-
-```bash
-python siamese_trainer.py
-```
 
 Exécute automatiquement : entraînement (3 époques) → sauvegarde → évaluation → comparaison des modèles pré-entraînés.
