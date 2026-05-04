@@ -9,11 +9,10 @@ Réseau siamois basé sur ResNet18 entraîné avec la Triplet Loss sur le datase
 
 ---
 
-Le modele permet de générer des vecteurs pour chaque visage, la distance entre ces vecteurs détermine si les visages sont identiques ou non. Il est donc essentiel de determiner un **seuil de distance optimal** pour la reconnaissance faciale (voir la courbe de F1-Score vs Seuil dans la figure ci-dessous).
+Le modele permet de générer des vecteurs pour chaque visage, la distance entre ces vecteurs détermine si les visages sont identiques ou non. Il est donc essentiel de determiner un **seuil de distance optimal** pour la reconnaissance faciale (voir la crépartition de distibution de distance entre des paires identique et différentes dans la figure ci-dessous).
 
 ![Histogrammes de comparaison](images_statistiques/comparison_results.png)
-
-
+En vert, il s'agit de la distance caluclé pour deux images de la meme personnes, et en rouge deux images de personne différentes. Plus ces distribution sont séparables, plus notre modele est capable de donner une réponse sans erreurs.
 ## Prérequis
 
 ### Dataset LFW (obligatoire mais il figure déja sur le repository github)
