@@ -2,7 +2,17 @@
 
 Réseau siamois basé sur ResNet18 entraîné avec la Triplet Loss sur le dataset **LFW (Labeled Faces in the Wild)**. Le projet permet d'entraîner, évaluer, comparer et utiliser un modèle d'embedding facial.
 
+### Aperçu des résultats
+| Même personne | Personnes différentes |
+|:---:|:---:|
+| ![Même personne](images_statistiques/comparaison_meme_personne.png) | ![Personnes différentes](images_statistiques/comparaison_diff_personne.png) |
+
 ---
+
+Le modele permet de générer des vecteurs pour chaque visage, la distance entre ces vecteurs détermine si les visages sont identiques ou non. Il est donc essentiel de determiner un **seuil de distance optimal** pour la reconnaissance faciale (voir la courbe de F1-Score vs Seuil dans la figure ci-dessous).
+
+![Histogrammes de comparaison](images_statistiques/comparison_results.png)
+
 
 ## Prérequis
 
@@ -95,9 +105,12 @@ SiameseTrainer.compare_models(
 )
 ```
 
-Génère `comparison_results.png` (histogrammes) et `comparison_curves.png` (courbes comparatives).
+Génère `comparison_results.png` (histogrammes) et `comparison_curves.png` (courbes comparatives) afin de comparer les performances des différents modèles entraînés. Cela permet surtout aussi de determiner le **seuil de distance optimal** pour la reconnaissance faciale. 
 
-### 5. Inférence sur une paire d'images
+![Courbes de comparaison](images_statistiques/comparison_curves.png)
+![Histogrammes de comparaison](images_statistiques/comparison_results.png)
+
+### 5. Test sur une paire d'images
 
 ```python
 result = trainer.evaluer_paire(img1, img2, threshold=1.0)
